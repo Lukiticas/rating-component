@@ -1,0 +1,278 @@
+:root {
+  --bg-1: hsl(216, 12%, 8%);
+  --bg-1-grad: hsl(210, 6%, 13%);
+  --bg-2: hsl(213, 19%, 18%);
+  --bg-3: hsl(216, 12%, 54%);
+  --rev-bg-grad: hsl(212, 20%, 13%);
+  --wrd-1: hsl(217, 12%, 63%);
+  --wrd-2: hsl(0, 0%, 100%);
+  --wrd-3: hsl(25, 97%, 53%);
+  --pad-1: 3.3rem;
+}
+
+/* TYPOGRAPHY */
+
+body {
+  font-family: "Overpass", sans-serif;
+}
+
+.rating-body__description h2 {
+  font-size: 1.8rem;
+}
+
+.rates {
+  font-weight: 700;
+}
+
+.rating-body__button {
+  font-size: 1rem;
+  letter-spacing: 0.2ch;
+  font-weight: 500;
+}
+
+.selected {
+  font-weight: 700;
+}
+
+/* COLORS */
+
+.app {
+  background: #434343;
+  background: linear-gradient(to top, hsl(0, 0%, 8%), hsl(0, 0%, 4%));
+}
+
+.rating-body {
+  background-image: linear-gradient(to top, var(--bg-1) 50%, var(--bg-1-grad));
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 15px -3px,
+    rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
+}
+
+.rating-body__description,
+.submited__description {
+  color: var(--wrd-1);
+}
+
+.rating-body__description h2,
+.submited__description h2 {
+  color: var(--wrd-2);
+}
+
+.rate,
+.star {
+  --clr: var(--wrd-1);
+  --bg: var(--bg-2);
+  color: var(--clr);
+  background-color: var(--bg);
+}
+
+.rating-body__button {
+  --bg: var(--wrd-3);
+  --clr: var(--wrd-2);
+  background-color: var(--bg);
+  color: var(--clr);
+}
+
+.rating-body__rates > input[name="rating"]:checked + .rate {
+  --bg: var(--wrd-3);
+  --clr: var(--wrd-2);
+}
+
+.submited__rating {
+  --clr: var(--wrd-3);
+  --bg: var(--bg-2);
+  color: var(--clr);
+  background-image: linear-gradient(to top, var(--bg) 50%, var(--rev-bg-grad));
+}
+
+.submited__description > :last-child {
+  --clr: var(--wrd-3);
+  color: var(--clr);
+}
+
+/* LAYOUT */
+
+/* LAYOUT - WRAPPER */
+
+.app {
+  display: grid;
+  place-items: center;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.rating-body {
+  display: flex;
+  flex-flow: column;
+  padding: 2rem;
+  max-width: 26.9rem;
+  border-radius: 2rem;
+  gap: 2rem;
+}
+
+/* LAYOUT - GENERIC */
+
+.submited,
+.rating-body__rates,
+.rating-body__button,
+.rate,
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rate,
+.star {
+  line-height: var(--pad-1);
+  width: var(--pad-1);
+  height: var(--pad-1);
+  border-radius: 50vw;
+}
+
+/* LAYOUT - RATING COMPONENT  */
+
+.rating-body__description h2 {
+  margin-bottom: 1rem;
+}
+
+.rating-body__rates {
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+
+input[name="rating"] {
+  display: none;
+}
+
+.rating-body__button {
+  border: none;
+  width: 100%;
+  height: 3rem;
+  border-radius: 50vw;
+  padding: 0;
+  line-height: 3rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* LAYOUT - SUBMITED COMPONENT */
+
+.submited {
+  flex-flow: column;
+  align-items: center;
+}
+
+.submited__description > *:not(small) {
+  margin-bottom: 1rem;
+}
+
+.submited__rating > * {
+  line-height: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.submited__rating {
+  width: max-content;
+  height: 2.2rem;
+  padding: 0 1rem;
+  border-radius: 50vw;
+}
+
+.rate--submited {
+  margin: 0 0.3ch;
+}
+
+.submited__description {
+  text-align: center;
+}
+
+/*  UTIL */
+
+.hidden {
+  display: none;
+}
+
+/* ANIMATIONS */
+
+.rating-body {
+  animation: appear 200ms linear;
+}
+
+.hidden {
+  animation: appear 200ms linear;
+}
+
+.submited {
+  transition: transform 200ms ease-in;
+}
+
+.rating-body__button {
+  transition: all 300ms ease-in-out;
+}
+
+.rate {
+  transition: all 200ms ease-in;
+}
+
+/*  EFFECTS */
+
+.submited:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.rating-body__button:hover,
+.rating-body__button:focus-visible {
+  cursor: pointer;
+  outline: none;
+  --bg: var(--wrd-2);
+  --clr: var(--wrd-3);
+}
+
+.rate:hover,
+.rate:focus-visible {
+  outline: none;
+  cursor: pointer;
+  --bg: var(--wrd-1);
+  --clr: var(--wrd-2);
+}
+
+.rating-body__button:active {
+  filter: contrast(0.5);
+}
+
+.star:hover > img {
+  animation: spin 2s infinite alternate;
+}
+
+/* medias and keyframes */
+
+@keyframes appear {
+  from {
+    transform: scale(0.6);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(-1000deg);
+    transform: rotate(-1000deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    font-size: 13px;
+  }
+}

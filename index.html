@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- links -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Interactive rating component by Lucas 💖</title>
+  </head>
+  <body>
+    <main class="app">
+      <!-- FIRST COMPONENT -->
+      <article class="rating-body ">
+        <div class="star">
+          <img src="./assets/images/icon-star.svg" alt="" aria-hidden="true" />
+        </div>
+        <section class="rating-body__description">
+          <h2>How did we do?</h2>
+          <p>
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </section>
+        <div class="rating-body__rates">
+          <input type="checkbox" name="rating" id="1" />
+          <label tabindex="0" for="1" class="rate">1</label>
+          <input type="checkbox" name="rating" id="2" />
+          <label tabindex="0" for="2" class="rate">2</label>
+          <input type="checkbox" name="rating" id="3" />
+          <label tabindex="0" for="3" class="rate">3</label>
+          <input type="checkbox" name="rating" id="4" />
+          <label tabindex="0" for="4" class="rate">4</label>
+          <input type="checkbox" name="rating" id="5" />
+          <label tabindex="0" for="5" class="rate">5</label>
+        </div>
+        <button type="submit" class="rating-body__button">
+          SUBMIT
+        </button>
+      </article>
+
+      <!-- SECUNDARY COMPONENT -->
+      <article class="rating-body submited hidden">
+        <img
+          src="./assets/images/illustration-thank-you.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="submited__rating">
+          <p>You selected <span class="rate--submited">4</span> out of 5</p>
+        </div>
+        <section class="submited__description">
+          <h2>Thank you!</h2>
+          <p>
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don't hesitate to get in touch!
+          </p>
+          <small>click to go back!</small>
+        </section>
+      </article>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
