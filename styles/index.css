@@ -196,6 +196,10 @@ input[name="rating"] {
   display: none;
 }
 
+.invalid {
+  outline: 0.1rem solid var(--wrd-3);
+}
+
 /* ANIMATIONS */
 
 .rating-body {
@@ -235,6 +239,7 @@ input[name="rating"] {
 
 .rate:hover,
 .rate:focus-visible {
+  transform: scale(1.05);
   outline: none;
   cursor: pointer;
   --bg: var(--wrd-1);
@@ -271,8 +276,8 @@ input[name="rating"] {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   :root {
-    font-size: 13px;
+    font-size: 3.3vw;
   }
 }
