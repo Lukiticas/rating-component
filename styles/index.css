@@ -113,6 +113,7 @@ body {
 
 /* LAYOUT - GENERIC */
 
+.rollback,
 .submited,
 .rating-body__rates,
 .rating-body__button,
@@ -123,6 +124,7 @@ body {
   justify-content: center;
 }
 
+.rollback,
 .rate,
 .star {
   line-height: var(--pad-1);
@@ -230,6 +232,7 @@ input[name="rating"] {
   transition: all 300ms ease-in-out;
 }
 
+.rollback,
 .rate {
   transition: all 200ms ease-in;
 }
@@ -240,9 +243,9 @@ input[name="rating"] {
   transform: scale(1.01);
 }
 
-.rollback:hover > img {
+.rollback:hover > img,
+.rollback:focus > img {
   transform: rotate(180deg);
-  cursor: pointer;
 }
 
 .rating-body__button:hover,
@@ -253,6 +256,8 @@ input[name="rating"] {
   --clr: var(--wrd-3);
 }
 
+.rollback:hover,
+.rollback:focus-visible,
 .rate:hover,
 .rate:focus-visible {
   transform: scale(1.05);
