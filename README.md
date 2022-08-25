@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here](https://www.frontendmentor.io/solutions/rating-components-w-modern-touch-3-Kj7ks2Lmio)
+- Live Site URL: [here](https://lukiticas.github.io/rating-component/)
 
 ## My process
 
