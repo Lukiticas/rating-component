@@ -35,9 +35,10 @@ const invalidAnimate = (parent, labels) => {
 };
 
 /* SLIDE BETWEEN WINDOWS */
+
 const toggleWindows = (rateNumber) => {
   ratingBody.forEach((window) => {
-    $(".rate--submited")[0].innerText = rateNumber;
+    if (rateNumber) $(".rate--submited")[0].innerText = rateNumber;
     window.classList.toggle("hidden");
   });
 };
@@ -51,33 +52,34 @@ const toBehaveLikeRadio = (input) => {
 };
 
 radios.forEach((button) => {
-  button.addEventListener("click", () => {
-    toBehaveLikeRadio(button);
-  });
+  button.addEventListener("click", () => toBehaveLikeRadio(button));
 });
 
 /* CLICK WITH ENTER */
 
-labels.forEach((label) => {
-  label.addEventListener("keypress", (e) => {
-    if (e.keyCode === 13) label.click();
+const clickOnEnter = (item, to) => {
+  item.addEventListener("keypress", (e) => {
+    const target = to ? to : item;
+    if (e.keyCode === 13) target.click();
   });
+};
+
+labels.forEach((label) => {
+  clickOnEnter(label);
 });
 
 /* ALL MAGIC RAPPENDS HERE */
 
-$(".rating-body__button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const isEveryChecked = radios.some((el) => el.checked === true);
-    if (isEveryChecked) {
-      const givenRate = radios.filter((radio) => radio.checked == true)[0].id;
-      toggleWindows(givenRate);
-    } else {
-      invalidAnimate(ratingBody[0], labels);
-    }
-  });
+$(".rating-body__button")[0].addEventListener("click", () => {
+  const isEveryChecked = radios.some((el) => el.checked === true);
+  if (isEveryChecked) {
+    const givenRate = radios.filter((radio) => radio.checked == true)[0].id;
+    toggleWindows(givenRate);
+  } else {
+    invalidAnimate(ratingBody[0], labels);
+  }
 });
 
-$(".rollback")[0].addEventListener("click", () => {
-  toggleWindows();
+$(".rollback").forEach((el) => {
+  el.addEventListener("click", () => toggleWindows());
 });
