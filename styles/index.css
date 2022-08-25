@@ -43,8 +43,8 @@ body {
 
 .rating-body {
   background-image: linear-gradient(to top, var(--bg-1) 50%, var(--bg-1-grad));
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 15px -3px,
-    rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 20px 50px -12px,
+    rgba(255, 255, 255, 0.1) 0px 18px 36px -18px;
 }
 
 .rating-body__description,
