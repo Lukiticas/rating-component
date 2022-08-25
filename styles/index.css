@@ -84,8 +84,10 @@ body {
   background-image: linear-gradient(to top, var(--bg) 50%, var(--rev-bg-grad));
 }
 
-.submited__description > :last-child {
-  --clr: var(--wrd-3);
+.rollback {
+  --bg: var(--wrd-3);
+  --clr: var(--wrd-2);
+  background-color: var(--bg);
   color: var(--clr);
 }
 
@@ -159,6 +161,7 @@ input[name="rating"] {
 /* LAYOUT - SUBMITED COMPONENT */
 
 .submited {
+  position: relative;
   flex-flow: column;
   align-items: center;
 }
@@ -190,6 +193,14 @@ input[name="rating"] {
   text-align: center;
 }
 
+.rollback {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
 /*  UTIL */
 
 .hidden {
@@ -210,7 +221,8 @@ input[name="rating"] {
   animation: appear 200ms linear;
 }
 
-.submited {
+.submited,
+.rollback > img {
   transition: transform 200ms ease-in;
 }
 
@@ -225,8 +237,12 @@ input[name="rating"] {
 /*  EFFECTS */
 
 .submited:hover {
-  cursor: pointer;
   transform: scale(1.01);
+}
+
+.rollback:hover > img {
+  transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .rating-body__button:hover,

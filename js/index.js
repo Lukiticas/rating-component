@@ -70,6 +70,6 @@ $(".rating-body__button").forEach((button) => {
   });
 });
 
-$(".submited")[0].addEventListener("click", () => {
+$(".rollback")[0].addEventListener("click", () => {
   toggleWindows();
 });
