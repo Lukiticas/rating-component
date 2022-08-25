@@ -56,6 +56,14 @@ radios.forEach((button) => {
   });
 });
 
+/* CLICK WITH ENTER */
+
+labels.forEach((label) => {
+  label.addEventListener("keypress", (e) => {
+    if (e.keyCode === 13) label.click();
+  });
+});
+
 /* ALL MAGIC RAPPENDS HERE */
 
 $(".rating-body__button").forEach((button) => {
