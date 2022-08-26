@@ -25,7 +25,7 @@
     <main class="app">
       <!-- FIRST COMPONENT -->
       <div class="rating-body">
-        <div class="star">
+        <div class="flex round star">
           <img src="./assets/images/icon-star.svg" alt="" aria-hidden="true" />
         </div>
         <section class="rating-body__description">
@@ -35,19 +35,29 @@
             feedback is appreciated to help us improve our offering!
           </p>
         </section>
-        <div class="rating-body__rates">
+        <div class="flex rating-body__rates">
           <input type="checkbox" name="rating" id="1" />
-          <label tabindex="0" for="1" class="rate">1</label>
+          <label tabindex="0" for="1" class="flex round rate scale-on-hover"
+            >1</label
+          >
           <input type="checkbox" name="rating" id="2" />
-          <label tabindex="0" for="2" class="rate">2</label>
+          <label tabindex="0" for="2" class="flex round rate scale-on-hover"
+            >2</label
+          >
           <input type="checkbox" name="rating" id="3" />
-          <label tabindex="0" for="3" class="rate">3</label>
+          <label tabindex="0" for="3" class="flex round rate scale-on-hover"
+            >3</label
+          >
           <input type="checkbox" name="rating" id="4" />
-          <label tabindex="0" for="4" class="rate">4</label>
+          <label tabindex="0" for="4" class="flex round rate scale-on-hover"
+            >4</label
+          >
           <input type="checkbox" name="rating" id="5" />
-          <label tabindex="0" for="5" class="rate">5</label>
+          <label tabindex="0" for="5" class="flex round rate scale-on-hover"
+            >5</label
+          >
         </div>
-        <button type="submit" class="rating-body__button">
+        <button type="submit" class="rating-body__button flex">
           SUBMIT
         </button>
       </div>
@@ -58,7 +68,7 @@
           tabindex="0"
           type="button"
           title="go back to previous card"
-          class="rollback"
+          class="flex round rollback scale-on-hover"
         >
           <img
             src="./assets/images/arrow.svg"

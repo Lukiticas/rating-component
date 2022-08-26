@@ -113,20 +113,13 @@ body {
 
 /* LAYOUT - GENERIC */
 
-.rollback,
-.submited,
-.rating-body__rates,
-.rating-body__button,
-.rate,
-.star {
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.rollback,
-.rate,
-.star {
+.round {
   line-height: var(--pad-1);
   width: var(--pad-1);
   height: var(--pad-1);
@@ -256,10 +249,8 @@ input[name="rating"] {
   --clr: var(--wrd-3);
 }
 
-.rollback:hover,
-.rollback:focus-visible,
-.rate:hover,
-.rate:focus-visible {
+.scale-on-hover:hover,
+.scale-on-hover:focus-visible {
   transform: scale(1.05);
   outline: none;
   cursor: pointer;
